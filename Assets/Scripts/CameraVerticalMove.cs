@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CameraVerticalMove : MonoBehaviour
 {
-    public MobileJoystick verticalJoystick; 
+    public VerticalJoystick verticalJoystick;
 
-    public float verticalSpeed = 3f;  
+    public float verticalSpeed = 3f; 
 
     public bool useHeightLimits = true;
     public float minY = 1f;
@@ -15,15 +15,13 @@ public class CameraVerticalMove : MonoBehaviour
         if (verticalJoystick == null)
             return;
 
-        Vector2 input = verticalJoystick.Value;
+        float yInput = verticalJoystick.Value;
 
-        float yDir = input.y;
-
-        if (Mathf.Abs(yDir) < 0.01f)
+        if (Mathf.Abs(yInput) < 0.01f)
             return;
 
         Vector3 pos = transform.position;
-        pos.y += yDir * verticalSpeed * Time.deltaTime;
+        pos.y += yInput * verticalSpeed * Time.deltaTime;
 
         if (useHeightLimits)
         {
