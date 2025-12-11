@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraMobileMove : MonoBehaviour
 {
     public MobileJoystick moveJoystick;
-    public float moveSpeed = 0.5f;
-    public float rotationSpeed = 0.5f;
+    public float moveSpeed = 2f;
+
     void Update()
     {
         if (moveJoystick == null)
@@ -30,12 +30,5 @@ public class CameraMobileMove : MonoBehaviour
 
         moveDir.Normalize();
         transform.position += moveDir * moveSpeed * Time.deltaTime;
-
-        Vector3 lookDir = new Vector3(moveDir.x, 0f, moveDir.z);
-        if (lookDir.sqrMagnitude > 0.0001f)
-        {
-            Quaternion targetRot = Quaternion.LookRotation(lookDir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
-        }
     }
 }

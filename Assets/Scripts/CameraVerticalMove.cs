@@ -8,7 +8,7 @@ public class CameraVerticalMove : MonoBehaviour
 
     public bool useHeightLimits = true;
     public float minY = 1f;
-    public float maxY = 10f;
+    public float maxY = 8f;
 
     void Update()
     {

@@ -3,18 +3,17 @@ using UnityEngine.EventSystems;
 
 public class MobileJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    public RectTransform handle;  
-    public float maxRadius = 80f; 
-
+    public RectTransform handle;
+    public float maxRadius = 80f;
     public Vector2 Value { get; private set; }
 
-    RectTransform _baseRect;
-    Vector2 _startPos;
+    RectTransform baseRect;
 
     void Awake()
     {
-        _baseRect = GetComponent<RectTransform>();
-        _startPos = handle.anchoredPosition;
+        baseRect = GetComponent<RectTransform>();
+        if (handle != null)
+            handle.anchoredPosition = Vector2.zero;
         Value = Vector2.zero;
     }
 
@@ -25,28 +24,31 @@ public class MobileJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (handle == null)
+            return;
+
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            _baseRect,
+            baseRect,
             eventData.position,
             eventData.pressEventCamera,
             out Vector2 localPoint
         );
 
-        Vector2 offset = localPoint - _startPos;
+        Vector2 offset = localPoint;
 
         if (offset.magnitude > maxRadius)
-        {
             offset = offset.normalized * maxRadius;
-        }
 
-        handle.anchoredPosition = _startPos + offset;
-
+        handle.anchoredPosition = offset;
         Value = offset / maxRadius;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        handle.anchoredPosition = _startPos;
+        if (handle == null)
+            return;
+
+        handle.anchoredPosition = Vector2.zero;
         Value = Vector2.zero;
     }
 }
