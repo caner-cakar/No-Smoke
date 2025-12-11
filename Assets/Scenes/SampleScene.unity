@@ -361,7 +361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveJoystick: {fileID: 822796211}
-  moveSpeed: 5
+  moveSpeed: 0.5
+  rotationSpeed: 0.5
 --- !u!114 &330585551
 MonoBehaviour:
   m_ObjectHideFlags: 0
