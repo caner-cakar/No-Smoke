@@ -7,6 +7,7 @@ public class TouchSelectionManager : MonoBehaviour
     public Transform selectableRoot;
     public Color highlightColor = Color.yellow;
     public PartInfoPanel infoPanel;
+    public GameObject hideButtonRoot;
 
     Transform current;
     Renderer[] currentRenderers;
@@ -36,17 +37,37 @@ public class TouchSelectionManager : MonoBehaviour
     void TrySelect(Vector2 screenPos)
     {
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            GameObject go = EventSystem.current.currentSelectedGameObject;
+
+            bool isHideButton = false;
+            if (hideButtonRoot != null && go != null)
+            {
+                if (go == hideButtonRoot || go.transform.IsChildOf(hideButtonRoot.transform))
+                    isHideButton = true;
+            }
+
+            if (!isHideButton && infoPanel != null)
+                infoPanel.Hide();
+
             return;
+        }
 
         Ray ray = worldCamera.ScreenPointToRay(screenPos);
         RaycastHit hit;
         if (!Physics.Raycast(ray, out hit, 1000f))
+        {
+            ClearSelection();
             return;
+        }
 
         Transform target = hit.transform;
 
         if (selectableRoot != null && target != selectableRoot && !target.IsChildOf(selectableRoot))
+        {
+            ClearSelection();
             return;
+        }
 
         if (target == current)
         {
@@ -88,8 +109,6 @@ public class TouchSelectionManager : MonoBehaviour
     {
         if (current != null)
             current.gameObject.SetActive(false);
-
-        ClearSelection();
     }
 
     public void ClearSelection()
