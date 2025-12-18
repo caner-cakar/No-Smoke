@@ -718,32 +718,41 @@ MonoBehaviour:
   selectionManager: {fileID: 911007954}
   descriptions:
   - objectName: LeftLung
-    displayName: "Sa\u011Fl\u0131kl\u0131 Akci\u011Fer"
-    description: bla
-  - objectName: RightLung
     displayName: "Hastal\u0131kl\u0131 Akci\u011Fer"
-    description: blabla
+    description: "Yap\u0131s\u0131 bozulan ve nefes al\u0131p vermeyi zorla\u015Ft\u0131ran
+      hasarl\u0131 akci\u011Fer b\xF6lgesi."
+  - objectName: RightLung
+    displayName: "Sa\u011Fl\u0131kl\u0131 Akci\u011Fer"
+    description: "Normal yap\u0131s\u0131n\u0131 koruyan, oksijen al\u0131\u015Fveri\u015Fini
+      d\xFCzenli s\xFCrd\xFCren sa\u011Fl\u0131kl\u0131 akci\u011Fer dokusu."
   - objectName: Bul_01_Amfizem
     displayName: Amfizem
-    description: blabla
+    description: "Amfizem nedeniyle a\u015F\u0131r\u0131 geni\u015Flemi\u015F hava
+      bo\u015Flu\u011Funu temsil eden k\xFCresel lezyon."
   - objectName: Bul_02_Amfizem
     displayName: Amfizem
-    description: blabla
+    description: "Amfizem nedeniyle a\u015F\u0131r\u0131 geni\u015Flemi\u015F hava
+      bo\u015Flu\u011Funu temsil eden k\xFCresel lezyon."
   - objectName: Bul_03_Amfizem
     displayName: Amfizem
-    description: blabla
+    description: "Amfizem nedeniyle a\u015F\u0131r\u0131 geni\u015Flemi\u015F hava
+      bo\u015Flu\u011Funu temsil eden k\xFCresel lezyon."
   - objectName: LeftBronchus
     displayName: "Bron\u015Flar"
-    description: blabla
+    description: "Hastal\u0131kl\u0131 akci\u011Fere ait daralm\u0131\u015F bron\u015Flar,
+      havan\u0131n ge\xE7i\u015Fini zorla\u015Ft\u0131rarak nefes almay\u0131 g\xFC\xE7le\u015Ftirir."
   - objectName: RightBronchus
     displayName: "Bron\u015Flar"
-    description: blabla
+    description: "Havay\u0131 nefes borusundan akci\u011Ferlere ta\u015F\u0131yan
+      ana hava yollar\u0131."
   - objectName: tumor
     displayName: "T\xFCm\xF6r"
-    description: blabla
+    description: "Akci\u011Ferdeki anormal h\xFCcre \xE7o\u011Falmas\u0131n\u0131
+      temsil eden kahverengi t\xFCm\xF6r kitlesi."
   - objectName: Trachea
     displayName: Trakea
-    description: blabla
+    description: "A\u011F\u0131z ve burundan gelen havay\u0131 bron\u015Flara ta\u015F\u0131yan
+      ana nefes borusudur."
   offset: {x: 60, y: -60}
 --- !u!114 &354146082
 MonoBehaviour:
@@ -848,15 +857,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
