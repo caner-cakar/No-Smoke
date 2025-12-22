@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class CameraSwipeRotate : MonoBehaviour
 {
-    public float touchRotateSpeed = 0.01f;
+    public float touchRotateSpeed = 0.1f;
     public float mouseRotateSpeed = 0.2f;
 
     public RectTransform[] ignoreZones;

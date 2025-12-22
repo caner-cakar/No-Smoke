@@ -636,7 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 330585545}
   mouseZoomSpeed: 10
-  touchZoomSpeed: 0.01
+  touchZoomSpeed: 0.1
   minZoom: 20
   maxZoom: 60
 --- !u!114 &330585554
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86f096405fb4c5488ca6d7be9b1c7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchRotateSpeed: 0.01
+  touchRotateSpeed: 0.1
   mouseRotateSpeed: 0.2
   ignoreZones:
   - {fileID: 822796210}

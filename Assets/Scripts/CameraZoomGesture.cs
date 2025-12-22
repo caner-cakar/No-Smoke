@@ -4,7 +4,7 @@ public class CameraZoomGesture : MonoBehaviour
 {
     public Camera targetCamera;
     public float mouseZoomSpeed = 10f;
-    public float touchZoomSpeed = 0.01f;
+    public float touchZoomSpeed = 0.1f;
     public float minZoom = 20f;
     public float maxZoom = 60f;
 
